@@ -3,7 +3,7 @@ package com.example.nobsv2.Product.services;
 import com.example.nobsv2.Command;
 import com.example.nobsv2.Product.ProductRepository;
 import com.example.nobsv2.Product.model.Product;
-import exception.ProductNotFoundException;
+import com.example.nobsv2.exception.ProductNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;

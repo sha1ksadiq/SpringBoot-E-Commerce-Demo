@@ -4,7 +4,7 @@ import com.example.nobsv2.Product.ProductRepository;
 import com.example.nobsv2.Product.model.Product;
 import com.example.nobsv2.Product.model.ProductDTO;
 import com.example.nobsv2.Query;
-import exception.ProductNotFoundException;
+import com.example.nobsv2.exception.ProductNotFoundException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
@@ -25,8 +25,6 @@ public class GetProductService implements Query<Integer, ProductDTO> {
         if(productRepository.existsById(input)) {
             return ResponseEntity.ok(new ProductDTO(productOptional.get()));
         }
-
-
         throw new ProductNotFoundException();
     }
 }

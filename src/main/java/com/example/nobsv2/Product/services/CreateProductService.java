@@ -1,5 +1,6 @@
 package com.example.nobsv2.Product.services;
 
+import Validators.ProductValidator;
 import com.example.nobsv2.Command;
 import com.example.nobsv2.Product.ProductRepository;
 import com.example.nobsv2.Product.model.Product;
@@ -19,7 +20,10 @@ public class CreateProductService implements Command<Product, ProductDTO> {
 
     @Override
     public ResponseEntity<ProductDTO> execute(Product product) {
+        //validate before saving
+        ProductValidator.execute(product);
         Product savedProduct = productRepository.save(product);
         return ResponseEntity.status(HttpStatus.CREATED).body(new ProductDTO(savedProduct));
     }
+
 }

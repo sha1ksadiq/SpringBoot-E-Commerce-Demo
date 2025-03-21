@@ -1,6 +1,4 @@
-package exception;
-
-import jdk.jshell.Snippet;
+package com.example.nobsv2.exception;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
