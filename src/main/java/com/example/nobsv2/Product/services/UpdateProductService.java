@@ -31,8 +31,6 @@ public class UpdateProductService implements Command<UpdateProductCommand, Produ
             productRepository.save(product);
             return ResponseEntity.ok(new ProductDTO(product));
         }
-
-
         throw new ProductNotFoundException();
     }
 }

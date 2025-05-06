@@ -1,8 +1,15 @@
 package com.example.nobsv2.Product.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.PositiveOrZero;
+import jakarta.validation.constraints.Size;
+import lombok.Data;
+import lombok.NonNull;
 
 @Entity //Maps class to mysql
+@Data
+@Table(name = "product")
 public class Product {
 
     @Id // tags variable id as the primary key for mysql
@@ -10,12 +17,15 @@ public class Product {
     @Column(name = "id")
     private Integer id;
 
+    @NotNull(message = "Name is required.")
     @Column(name = "name")
     private String name;
 
+    @Size(message = "Description must be atleast 20 characters.")
     @Column(name = "description")
     private String description;
 
+    @PositiveOrZero(message = "Price must be non-negative.")
     @Column(name = "price")
     private double price;
 
