@@ -8,6 +8,7 @@ class Nobsv2ApplicationTests {
 
 	@Test
 	void contextLoads() {
+		// this is a sanity check, basically checks if there's any compilation errors or such
 	}
 
 }
